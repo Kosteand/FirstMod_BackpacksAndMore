@@ -2,7 +2,6 @@ package net.streets_of_war.backpacks_and_more;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +28,7 @@ public class backpacks_and_more
 
         ModItems.register(modEventBus);
 
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,8 +41,9 @@ public class backpacks_and_more
 
     }
     private void addCreative(CreativeModeTabEvent.BuildContents event){
-        if(event.getTab() == CreativeModeTabs.INGREDIENTS){
+        if(event.getTab() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.berkut);
+            event.accept(ModItems.day_pack);
         }
 
     }
